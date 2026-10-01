@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-ivory: #F5F2EA;
+    --fg-charcoal: #151815;
+    --forest-primary: #17382B;
+    --forest-secondary: #263F32;
+    --gold-accent: #B99A5B;
+    --cream-soft: #EDE7D8;
+    --muted-earth: #77766F;
+  }
+
+  body {
+    background-color: var(--bg-ivory);
+    color: var(--fg-charcoal);
+    font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  }
+
+  /* High Quality Image Rendering & Sharpness */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Lenis Smooth Scroll CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Typography Helpers */
+.font-display {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Luxury Grain Effect */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Hide scrollbar for clean horizontal scroll container */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Glass & Border Utilities */
+.border-gold-subtle {
+  border-color: rgba(185, 154, 91, 0.25);
+}
+
+.bg-forest-gradient {
+  background: linear-gradient(180deg, #17382B 0%, #11291F 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #DFCA97 0%, #B99A5B 50%, #8A6E32 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

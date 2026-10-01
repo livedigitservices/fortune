@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="24" fill="#17382B"/>
+  <g transform="translate(10, 15) scale(0.4)" stroke="#B99A5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    {/* Antennae */}
+    <path d="M100 65 Q92 35 70 20" />
+    <path d="M100 65 Q108 35 130 20" />
+    <circle cx="68" cy="18" r="4" fill="#B99A5B" />
+    <circle cx="132" cy="18" r="4" fill="#B99A5B" />
+
+    {/* Central Body */}
+    <path d="M100 50 Q105 75 100 110 Q95 75 100 50 Z" fill="#B99A5B" />
+
+    {/* Left Upper Wing */}
+    <path d="M98 62 C70 40 30 30 18 50 C8 68 20 100 65 95 C82 93 96 82 98 62 Z" />
+    <path d="M35 48 C45 60 70 70 95 72" />
+    <path d="M22 62 C38 75 65 82 92 84" />
+    <path d="M50 42 C60 52 78 60 92 64" />
+
+    {/* Right Upper Wing */}
+    <path d="M102 62 C130 40 170 30 182 50 C192 68 180 100 135 95 C118 93 104 82 102 62 Z" />
+    <path d="M165 48 C155 60 130 70 105 72" />
+    <path d="M178 62 C162 75 135 82 108 84" />
+    <path d="M150 42 C140 52 122 60 108 64" />
+
+    {/* Left Lower Wing */}
+    <path d="M96 85 C75 92 45 105 48 128 C50 148 78 152 92 125 C96 112 96 95 96 85 Z" />
+    <path d="M62 102 C70 120 85 132 94 112" />
+
+    {/* Right Lower Wing */}
+    <path d="M104 85 C125 92 155 105 152 128 C150 148 122 152 108 125 C104 112 104 95 104 85 Z" />
+    <path d="M138 102 C130 120 115 132 106 112" />
+  </g>
+</svg>
