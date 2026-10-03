@@ -90,7 +90,7 @@ export default function AcresSection() {
           data-cursor="3600 ACRES"
           className="font-display text-[120px] sm:text-[180px] md:text-[240px] lg:text-[300px] font-light leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#F5F2EA] via-[#EDE7D8] to-[#B99A5B]/40 drop-shadow-2xl my-[-20px] md:my-[-40px]"
         >
-          3600
+          7000
         </div>
 
         {/* Acres Unit & Vision Statement */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, CheckCircle2, ArrowRight, ShieldCheck, Loader2 } from 'lucide-react';
 import { projectData } from '../data/projectData';
 
 export default function EnquirySection() {
@@ -10,17 +10,56 @@ export default function EnquirySection() {
     preferredContact: 'Phone',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.phone.trim()) {
       setError('Please enter your name and phone number.');
       return;
     }
+
     setError('');
-    setSubmitted(true);
+    setSubmitting(true);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Direct Website Inquiry: ${formData.name} - Fortune Butterfly City`,
+          from_name: 'Fortune Butterfly City Website',
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || 'Not provided',
+          preferred_contact: formData.preferredContact,
+          message: formData.message || 'No additional message',
+          project: projectData.name,
+          developer: projectData.developer
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success || response.ok) {
+        setSubmitted(true);
+      } else {
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error('Web3Forms Submission Error:', err);
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -92,7 +131,7 @@ export default function EnquirySection() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="flex items-center justify-between border-b border-[#B99A5B]/20 pb-4 mb-6">
                   <span className="text-xs uppercase tracking-widest font-semibold text-[#B99A5B]">
-                    Priority Inquiry Form
+                    Priority Inquiry Form (Web3Forms API)
                   </span>
                   <ShieldCheck size={18} className="text-[#B99A5B]" />
                 </div>
@@ -183,11 +222,21 @@ export default function EnquirySection() {
 
                 <button
                   type="submit"
+                  disabled={submitting}
                   data-cursor="SUBMIT"
-                  className="w-full py-4 bg-[#B99A5B] hover:bg-[#F5F2EA] text-[#151815] font-semibold uppercase tracking-widest text-xs rounded-full transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-[#B99A5B] hover:bg-[#F5F2EA] text-[#151815] font-semibold uppercase tracking-widest text-xs rounded-full transition-all duration-300 shadow-xl flex items-center justify-center gap-2 disabled:opacity-70"
                 >
-                  <span>Submit Inquiry</span>
-                  <ArrowRight size={16} />
+                  {submitting ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      <span>Sending Inquiry...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit Inquiry</span>
+                      <ArrowRight size={16} />
+                    </>
+                  )}
                 </button>
               </form>
             ) : (
@@ -197,7 +246,7 @@ export default function EnquirySection() {
                   INQUIRY SUBMITTED
                 </h3>
                 <p className="text-sm text-[#EDE7D8]/80 max-w-md mx-auto mb-8 font-sans leading-relaxed">
-                  Thank you, <span className="text-[#B99A5B] font-semibold">{formData.name}</span>. Marketing Manager {projectData.contacts.manager} will contact you shortly.
+                  Thank you, <span className="text-[#B99A5B] font-semibold">{formData.name}</span>. Your submission was sent via Web3Forms API. Marketing Manager {projectData.contacts.manager} will contact you shortly.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}

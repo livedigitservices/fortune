@@ -3,7 +3,7 @@ export const projectData = {
   shortName: "Butterfly City",
   tagline: "A Premium Destination For A Future You Can Own",
   developer: "Fortune Infra Developers Private Limited",
-  scale: "Proposed 3600",
+  scale: "Proposed 7000",
   unit: "Acres",
   type: "Premium Open Plots / Plotted Development",
   
@@ -25,7 +25,7 @@ export const projectData = {
 
   navigation: [
     { label: "Overview", href: "#overview" },
-    { label: "3600 Acres", href: "#acres" },
+    { label: "7000 Acres", href: "#acres" },
     { label: "Plot Vision", href: "#vision" },
     { label: "Phases", href: "#phases" },
     { label: "Gallery", href: "#gallery" },
@@ -40,7 +40,7 @@ export const projectData = {
       tag: "REAL ESTATE",
       title: "The Grand Villa Estate",
       caption: "Exquisite gated villa compound with signature terracotta rooflines and sprawling manicured green lawns.",
-      url: "/projects/project_1.jpg"
+      url: "/projects/project_1.png"
     },
     {
       id: "02",

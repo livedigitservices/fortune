@@ -147,7 +147,7 @@ export default function HeroSection({ onOpenEnquiry }) {
       >
         <div>
           <span className="block text-[10px] uppercase tracking-widest text-[#B99A5B]">Total Scale</span>
-          <span className="font-display text-2xl md:text-3xl font-light text-white">3600 Acres</span>
+          <span className="font-display text-2xl md:text-3xl font-light text-white">7000 Acres</span>
         </div>
         <div>
           <span className="block text-[10px] uppercase tracking-widest text-[#B99A5B]">Development Type</span>

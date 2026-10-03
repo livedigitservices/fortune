@@ -85,20 +85,20 @@ export default function InvestmentSection({ onOpenEnquiry }) {
             </div>
           </div>
 
-          {/* Right Image Visual */}
+          {/* Right Image Visual - Featuring 8K HD Project Photo 5 */}
           <div className="lg:col-span-5">
             <div
               data-cursor="DESTINATION"
               className="relative rounded-3xl overflow-hidden aspect-[4/5] border border-[#B99A5B]/30 shadow-2xl group"
             >
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-                alt="Fortune Butterfly City Sanctuary"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="/projects/project_5.jpg"
+                alt="Fortune Butterfly City Terrace Estate Sanctuary"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out filter brightness-95 group-hover:brightness-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#151815] via-transparent to-transparent" />
               
-              <div className="absolute bottom-8 left-8 right-8 text-center p-6 bg-[#17382B]/80 backdrop-blur-md rounded-2xl border border-[#B99A5B]/30">
+              <div className="absolute bottom-8 left-8 right-8 text-center p-6 bg-[#17382B]/85 backdrop-blur-md rounded-2xl border border-[#B99A5B]/30">
                 <span className="font-display text-2xl font-light text-[#F5F2EA] block">
                   "OWN A SPACE THAT CAN BECOME YOUR NEXT DESTINATION."
                 </span>

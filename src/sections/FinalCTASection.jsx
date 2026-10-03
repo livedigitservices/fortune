@@ -45,13 +45,13 @@ export default function FinalCTASection({ onOpenEnquiry }) {
       ref={containerRef}
       className="relative min-h-screen flex flex-col justify-center items-center bg-[#151815] text-[#F5F2EA] px-6 py-24 overflow-hidden select-none"
     >
-      {/* Background Hero Photography */}
+      {/* Background Hero Photography - Featuring 8K HD Project Photo 2 */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div
           ref={bgRef}
-          className="absolute inset-0 bg-cover bg-center filter brightness-[0.5] contrast-[1.15]"
+          className="absolute inset-0 bg-cover bg-center filter brightness-[0.55] contrast-[1.1]"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=90')`
+            backgroundImage: `url('/projects/project_2.jpg')`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#151815] via-[#151815]/50 to-black/70" />
