@@ -24,7 +24,7 @@ export default function EnquirySection() {
     setError('');
     setSubmitting(true);
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY';
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'e86e7a3c-0fd1-4d6b-b102-a2696161aa1b';
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
